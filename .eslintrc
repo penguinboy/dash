@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    // Turn on only for multiline.
+    // http://eslint.org/docs/rules/comma-dangle
+    "comma-dangle": ["error", "only-multiline"],
+
+    // Turn off http://eslint.org/docs/rules/eol-last
+    "eol-last": 0,
+
+    // Override airbnb to disable devDependencies check until we figure out how to exclude tests files
+    "import/no-extraneous-dependencies": [2, {"optionalDependencies": false}],
+
+    // We rely on named export for reducer so namespace is preserved in the redux store.
+    "import/prefer-default-export": 0,
+
+    // Turn off http://eslint.org/docs/rules/no-trailing-spaces
+    "no-trailing-spaces": 0,
+
+    // Turn off http://eslint.org/docs/rules/spaced-comment
+    "spaced-comment": 0,
+
+    // Turn off https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    "react/jsx-filename-extension": 0,
+
+    // Turn off https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md
+    "import/no-named-as-default-member": 0,
+
+    // Increase max character lengths per line
+    // http://eslint.org/docs/rules/max-len
+    "max-len": ["error", 120],
+
+    "no-console": 0
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}

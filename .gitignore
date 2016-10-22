@@ -8,3 +8,4 @@ reports
 .idea/
 
 .DS_Store
+aws.config.js

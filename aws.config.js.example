@@ -1,0 +1,6 @@
+module.exports = {
+  s3_key: '',
+  s3_secret: '',
+  region: 'ap-southeast-1',
+  bucket: ''
+};

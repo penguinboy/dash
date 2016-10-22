@@ -41,6 +41,10 @@
     // http://eslint.org/docs/rules/max-len
     "max-len": ["error", 120],
 
+    "react/prop-types": 0,
+    "react/jsx-no-comment-textnodes": 0,
+    "react/prefer-stateless-function": 0,
+
     "no-console": 0
   },
   "settings": {

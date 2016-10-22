@@ -14,6 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "history": "^2.1.2",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "moment": "^2.15.1",
     "react": "^15.3.2",
     "react-document-title": "^2.0.2",
     "react-dom": "^15.3.2",
@@ -24,6 +27,7 @@
     "redux-actions": "^0.12.0",
     "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0",
+    "style-loader": "^0.13.1",
     "use-named-routes": "^0.3.2"
   },
   "devDependencies": {

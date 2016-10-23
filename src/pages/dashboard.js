@@ -11,10 +11,7 @@ const Dashboard = () => (
   <div className={style.container}>
     <div className={style.rowseperator} />
     <div className={style.row}>
-      <Seperator />
-      <Seperator />
-      <Seperator />
-      <Seperator />
+      <Card />
       <Seperator />
       <Card>
         <Clock />

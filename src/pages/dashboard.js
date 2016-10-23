@@ -21,7 +21,8 @@ const Dashboard = () => (
     </div>
     <div className={style.rowseperator} />
     <div className={style.rowtwo}>
-      <WeatherCard> hello </WeatherCard>
+      <WeatherCard />
+      <Card />
     </div>
   </div>
 );

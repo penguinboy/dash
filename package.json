@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "history": "^2.1.2",
+    "jquery": "^3.1.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "moment": "^2.15.1",

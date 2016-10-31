@@ -45,7 +45,8 @@
     "react/jsx-no-comment-textnodes": 0,
     "react/prefer-stateless-function": 0,
 
-    "no-console": 0
+    "no-console": 0,
+    "prefer-template": 0
   },
   "settings": {
     "import/resolver": "webpack"

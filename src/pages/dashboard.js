@@ -1,12 +1,15 @@
 import React from 'react';
-import Calendar from '../components/Calendar';
-import Seperator from '../components/seperator';
-import IconSeperator from '../components/iconseperator';
-import Card from '../components/card';
-import Clock from '../components/clock';
+import Calendar from 'components/Calendar';
+import Seperator from 'components/seperator';
+import IconSeperator from 'components/iconseperator';
+import Card from 'components/card';
+import Clock from 'components/clock';
+import WeatherCard from 'components/weathercard';
+import Iconbay from 'components/iconbay';
+import Trash from 'components/trash';
+
 import style from './dashboard.less';
-import WeatherCard from '../components/weathercard';
-import Iconbay from '../components/iconbay';
+
 
 const Dashboard = () => (
   <div className={style.container}>
@@ -24,7 +27,9 @@ const Dashboard = () => (
       <WeatherCard />
       <div className={style.iconcontainer}>
         <div className={style.iconrow}>
-          <Iconbay />
+          <Iconbay>
+            <Trash />
+          </Iconbay>
           <IconSeperator />
           <Iconbay />
           <IconSeperator />

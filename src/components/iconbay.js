@@ -2,6 +2,13 @@ import React from 'react';
 
 import style from './iconbay.less';
 
+const Iconbay = ({ children }) => (
+  <div className={style.iconbay}>
+    { children }
+  </div>
+);
+
+/*
 class Iconbay extends React.Component {
   render() {
     const props = this.props;
@@ -11,6 +18,6 @@ class Iconbay extends React.Component {
       </div>
     );
   }
-}
+}*/
 
 export default Iconbay;

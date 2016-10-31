@@ -47,6 +47,10 @@ module.exports = {
       filename: 'index.js'
     },
     resolve: {
+      alias: {
+        config: path.resolve('config'),
+        core: path.resolve('src/core')
+      },
       modulesDirectories: ['node_modules'],
       extensions: ['', '.js', '.jsx']
     },

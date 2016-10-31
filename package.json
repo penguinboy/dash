@@ -29,7 +29,8 @@
     "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0",
     "style-loader": "^0.13.1",
-    "use-named-routes": "^0.3.2"
+    "use-named-routes": "^0.3.2",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

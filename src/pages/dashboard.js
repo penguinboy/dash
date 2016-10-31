@@ -12,7 +12,9 @@ const Dashboard = () => (
   <div className={style.container}>
     <div className={style.rowseperator} />
     <div className={style.row}>
-      <Card />
+      <Card>
+      <img className={style.logo} src="https://dl.dropboxusercontent.com/s/041odlx4mo95g7u/logo.png" alt="HTML5 Icon" />
+      </Card>
       <Seperator />
       <Card>
         <Clock />
@@ -41,6 +43,8 @@ const Dashboard = () => (
         </div>
       </div>
     </div>
+  <div className={style.rowseperator} />
+    
   </div>
 );
 

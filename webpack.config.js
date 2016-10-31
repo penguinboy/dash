@@ -89,6 +89,10 @@ module.exports = {
             'style-loader',
             'css-loader?modules&localIdentName=[name]__[local]__[hash:base64:5]:!less-loader'
           )
+        },
+        {
+          test: /\.(jpg|png)$/,
+          loader: 'url?limit=25000'
         }
       ]
     },

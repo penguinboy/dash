@@ -40,3 +40,24 @@ export const Calendar = {
       .then(returnEventRecords)
   )
 };
+
+
+const GROCERIES_TABLE = 'TEST Groceries';
+const returnItem = response => (
+  response.json()
+    .then(json => json.records)
+);
+export const Groceries = {
+  all: () => (
+    request.get(resource(GROCERIES_TABLE))
+      .then(returnItem)
+  ),
+  unpurchased: () => (
+    request.get(resource(GROCERIES_TABLE, { view: 'Unpurchased' }))
+      .then(returnItem)
+  ),
+  purchased: () => (
+    request.get(resource(GROCERIES_TABLE, { view: 'Purchased' }))
+      .then(returnItem)
+  )
+};

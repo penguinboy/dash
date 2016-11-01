@@ -1,1 +1,5 @@
-export default {};
+import { groceries } from './groceries';
+
+export {
+  groceries
+};

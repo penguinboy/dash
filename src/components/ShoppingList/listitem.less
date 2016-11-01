@@ -1,0 +1,28 @@
+.item {
+  padding: 15px 10px;
+  border-top: 1px solid #CCC;
+  color: #777;
+  display: flex;
+  transition: color 500ms, background 500ms;
+
+  &:last-child {
+    border-bottom: 1px solid #CCC;
+  }
+
+  &:hover {
+    color: #000;
+    background: #EEE;
+  }
+}
+
+.detail {
+  flex: 1;
+}
+
+.name {
+  .detail;
+}
+
+.quantity {
+  .detail;
+}

@@ -7,9 +7,9 @@ import Clock from 'components/clock';
 import WeatherCard from 'components/weathercard';
 import Iconbay from 'components/iconbay';
 import Trash from 'components/trash';
+import ShoppingList from 'components/ShoppingList';
 
 import style from './dashboard.less';
-
 
 const Dashboard = () => (
   <div className={style.container}>
@@ -22,6 +22,7 @@ const Dashboard = () => (
       </Card>
     </div>
     <div className={style.rowseperator} />
+    <ShoppingList />
     <Calendar />
     <div className={style.rowtwo}>
       <WeatherCard />

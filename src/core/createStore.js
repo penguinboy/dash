@@ -7,6 +7,8 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 // Reducers
 import * as rootReducer from './reducers';
 
+console.log('Reducers', { ...rootReducer });
+
 const buildStore = (history) => {
   const reactHistory = history || createMemoryHistory();
   const reducer = combineReducers({
@@ -17,17 +19,14 @@ const buildStore = (history) => {
   const middleware = [
     thunk,
     routerMiddleware(reactHistory),
+    logger()
   ];
-
-  if (process.env.NODE_ENV !== 'production' && process.env.BABEL_ENV !== 'test') {
-    middleware.push(logger());
-  }
-
+  
   const store = createStore(
     reducer,
     compose(
       applyMiddleware(...middleware),
-      process.env.NODE_ENV !== 'production' && window && window.devToolsExtension ? window.devToolsExtension() : f => f
+      window && window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   );
   return store;

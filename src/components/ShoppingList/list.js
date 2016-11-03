@@ -1,23 +1,34 @@
 import React, { PropTypes } from 'react';
-import ListItem from './listitem';
+import _ from 'lodash';
+import moment from 'moment';
+import ListItemContainer from './listitem-container';
 import style from './list.less';
 
-const renderItems = items => (
-  items.map(item => <ListItem key={item.id} {...item} />)
-);
 
 class List extends React.Component {
   componentDidMount() {
     this.props.getGroceries();
   }
+  persist() {
+    const { editGrocery, persist, unpurchased } = this.props;
+    const getItems = () => this.props.unpurchased;
+    return item => (
+      editGrocery(item).then(() => (persist(getItems())))
+    );
+  }
+  renderItems() {
+    if (!this.props.unpurchased) return undefined;
+    return _.sortBy(this.props.unpurchased, item => item.id)
+      .map(item => <ListItemContainer key={item.id} item={item} onSave={this.persist()}/>);
+  }
   render() {
     const { unpurchased } = this.props;
-    console.log('Render', this.props);
+    const dirty = unpurchased.filter(item => item.dirty).length;
     return (
       <div className={style.list}>
-        <h1>List { unpurchased.length }</h1>
+        <h1>List { `${unpurchased.length} ~${dirty}` }</h1>
         <div>
-          { unpurchased ? renderItems(unpurchased) : undefined }
+          { unpurchased ? this.renderItems() : undefined }
         </div>
       </div>
     );
@@ -26,7 +37,10 @@ class List extends React.Component {
 
 List.propTypes = {
   unpurchased: PropTypes.array,
-  getGroceries: PropTypes.func
+  getGroceries: PropTypes.func,
+  markGroceriesSelected: PropTypes.func,
+  editGrocery: PropTypes.func,
+  persist: PropTypes.func
 };
 
 export default List;

@@ -59,5 +59,10 @@ export const Groceries = {
   purchased: () => (
     request.get(resource(GROCERIES_TABLE, { view: 'Purchased' }))
       .then(returnItem)
-  )
+  ),
+  save: (item) => {
+    return request.patch(resource(`${GROCERIES_TABLE}/${item.id}`), {
+      fields: item.fields
+    });
+  }
 };

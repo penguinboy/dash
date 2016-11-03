@@ -1,22 +1,41 @@
-.item {
+.listitem {
   padding: 15px 10px;
   border-top: 1px solid #CCC;
-  color: #777;
   display: flex;
-  transition: color 500ms, background 500ms;
-
   &:last-child {
     border-bottom: 1px solid #CCC;
   }
+}
 
+.item {
+  .listitem;
+  color: #777;
+  transition: color 500ms, background 200ms;
   &:hover {
     color: #000;
     background: #EEE;
   }
 }
 
+.selectedItem {
+  .listitem;
+  background: #00AFCC;
+  color: #FFF;
+  border-top: 1px solid #EEE;
+  transition: color 100ms, background 100ms;
+}
+
 .detail {
+  font-size: 1.2em;
   flex: 1;
+  input {
+    background: none;
+    color: #FFF;
+    border-bottom: 1px dashed #EEE;
+    margin: auto -5px -6px -5px;
+    padding: 0 5px 5px 5px;
+    width: 100%;
+  }
 }
 
 .name {

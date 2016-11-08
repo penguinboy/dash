@@ -1,47 +1,104 @@
-.listitem {
-  padding: 15px 10px;
+.item {
+  margin-top: 1px;
+  padding: 0 10px;
   border-top: 1px solid #CCC;
   display: flex;
   &:last-child {
     border-bottom: 1px solid #CCC;
   }
-}
 
-.item {
-  .listitem;
   color: #777;
+  background: #FFF;
   transition: color 500ms, background 200ms;
   &:hover {
     color: #000;
-    background: #EEE;
+    box-shadow: 0 0 3px #555;
   }
 }
 
 .selectedItem {
-  .listitem;
-  background: #00AFCC;
-  color: #FFF;
+  background: #2196F3;
+  color: #EEE;
   border-top: 1px solid #EEE;
   transition: color 100ms, background 100ms;
+
+  &:hover {
+    background: #2196F3;
+    color: #EEE;
+  }
+}
+
+.purchasedItem {
+  text-decoration: line-through;
+  transition: text-decoration 300ms;
+  color: #DDD;
+  &:hover {
+    background: #FFF;
+    color: #DDD;
+    box-shadow: none;
+  }
+}
+
+.fields {
+  flex: 20;
+  display: flex;
+}
+
+.controls {
+  width: 40px;
+  padding-right: 15px;
 }
 
 .detail {
   font-size: 1.2em;
-  flex: 1;
+  flex: 5;
+  border-left: 1px dashed #CCC;
+  padding: 15px 0 15px 10px;
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80%;
+    overflow: hidden;
+  }
   input {
     background: none;
     color: #FFF;
     border-bottom: 1px dashed #EEE;
-    margin: auto -5px -6px -5px;
+    margin: auto 0px -2px -5px;
     padding: 0 5px 5px 5px;
-    width: 100%;
+    min-width: 80%;
   }
 }
 
-.name {
-  .detail;
+.itemName {
+  flex-basis: 10%;
 }
 
-.quantity {
-  .detail;
+.delete {
+  color: #FFF;
+  font-size: 2em;
+  display: inline-block;
+  padding: 10px;
+  width: 24px;
+
+  i {
+  }
+  &:hover {
+    cursor: pointer;
+    color: #555;
+    background: #FCE4EC;
+    box-shadow: 0 0 20px #F48FB1;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+
+  }
+}
+
+.subdetail {
+  font-size: 1.2em;
+  flex: 1;
+  border-left: 1px dashed #CCC;
+  padding: 15px 0 15px 10px;
 }

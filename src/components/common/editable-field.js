@@ -15,27 +15,25 @@ class EditableField extends React.Component {
         mode: MODE_EDIT
       });
     };
-    this.onChange = (value) => {
-      this.props.onSave(value);
+    this.onChange = onSave => ((value) => {
+      onSave(value);
       this.setState({
         mode: MODE_VIEW
       });
-    };
-  }
-  renderInput() {
-    return (
-      <InlineInput defaultValue={this.props.text} onSave={this.onChange} onFocus={this.props.onEdit} />
-    );
-  }
-  renderLabel() {
-    return this.props.text;
+    });
   }
   render() {
     const { text, onSave, onEdit, ...otherProps } = this.props;
     const { mode } = this.state;
+
+    const renderLabel = () => (<span>{text}</span>);
+    const renderInput = () => (
+      <InlineInput defaultValue={text} onSave={this.onChange(onSave)} onFocus={onEdit} />
+    );
+
     return (
       <div {...otherProps} onDoubleClick={this.clickHandler}>
-        { mode === MODE_VIEW ? this.renderLabel() : this.renderInput() }
+        { mode === MODE_VIEW ? renderLabel() : renderInput() }
       </div>
     );
   }

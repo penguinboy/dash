@@ -27,5 +27,6 @@ export default {
   get: (url, options) => fetchAPI(url, { ...options, method: 'GET' }),
   patch: (url, body, options) => fetchAPI(url, { ...options, body: JSON.stringify(body), method: 'PATCH' }),
   post: (url, body, options) => fetchAPI(url, { ...options, body: JSON.stringify(body), method: 'POST' }),
-  put: (url, body, options) => fetchAPI(url, { ...options, body: JSON.stringify(body), method: 'PUT' })
+  put: (url, body, options) => fetchAPI(url, { ...options, body: JSON.stringify(body), method: 'PUT' }),
+  delete: (url, options) => fetchAPI(url, { ...options, method: 'DELETE' })
 };

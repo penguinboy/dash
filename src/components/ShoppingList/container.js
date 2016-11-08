@@ -1,17 +1,18 @@
-// import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { getGroceries, markGroceriesSelected, editGrocery, persistGroceries as persist } from 'core/actions';
-import { selectGroceries } from 'core/selectors';
+import { getGroceries, markGroceriesSelected, editGrocery, deleteItem, persistGroceries } from 'core/actions';
+import { groceries } from 'core/selectors';
 import List from './list';
 
 const mapStateToProps = state => ({
-  unpurchased: selectGroceries(state)
+  unpurchased: groceries(state).getItems(),
+  deleted: groceries(state).getDeleted()
 });
 
 const mapDispatchToProps = ({
   getGroceries,
   editGrocery,
-  persist,
+  deleteGrocery: deleteItem,
+  persist: persistGroceries,
   markGroceriesSelected
 });
 

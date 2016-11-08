@@ -61,8 +61,19 @@ export const Groceries = {
       .then(returnItem)
   ),
   save: (item) => {
-    return request.patch(resource(`${GROCERIES_TABLE}/${item.id}`), {
+    if (item.id) {
+      console.log('Updating old');
+      return request.patch(resource(`${GROCERIES_TABLE}/${item.id}`), {
+        fields: item.fields
+      });
+    }
+    console.log('Creating new');
+    return request.post(resource(GROCERIES_TABLE), {
       fields: item.fields
     });
+  },
+  delete: (item) => {
+    console.log('Deleting', item);
+    return request.delete(resource(`${GROCERIES_TABLE}/${item.id}`));
   }
 };

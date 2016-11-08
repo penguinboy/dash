@@ -15,7 +15,8 @@ export const groceriesSelectors = (parentState) => {
     isSelected,
     getEditing,
     isEditing,
-    hasEdited: () => parentState.edited
+    hasEdited: () => parentState.edited,
+    getDeleted: () => parentState.deleted
   };
 };
 
@@ -38,4 +39,4 @@ export const isSelected = (state, id) => (
   groceriesSelectors(globalGroceries(state)).isSelected(id)
 );
 
-export const isEditing = state => false;
+export const isEditing = () => false;

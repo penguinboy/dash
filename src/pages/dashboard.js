@@ -23,7 +23,6 @@ const Dashboard = () => (
     </div>
     <div className={style.rowseperator} />
     <ShoppingList />
-    <Calendar />
     <div className={style.rowtwo}>
       <WeatherCard />
       <div className={style.iconcontainer}>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { toggleSelected, editGrocery, toggleEdit } from 'core/actions';
-import { isSelected, isEditing, groceries } from 'core/selectors';
+import { toggleSelected, toggleEdit } from 'core/actions';
+import { groceries } from 'core/selectors';
 
 import ListItem from './listitem';
 

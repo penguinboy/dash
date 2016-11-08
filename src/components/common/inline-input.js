@@ -1,23 +1,26 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import style from './inline-input.less';
 
 class InlineInput extends React.Component {
   componentDidMount() {
-    ReactDOM.findDOMNode(this.refs.input).focus();
+    this.input.focus();
   }
   save(e) {
     e.preventDefault();
     this.props.onSave(
-      this.refs.input.value
+      this.input.value
     );
   }
   render() {
-    const { onSave, onFocus, ...otherProps } = this.props;
-    console.log(this.props);
+    const { onFocus, defaultValue } = this.props;
     return (
       <form className={style.form} onSubmit={e => this.save(e)} onFocus={onFocus}>
-        <input ref="input" type="text" {...otherProps} onBlur={e => this.save(e)} />
+        <input
+          type="text"
+          defaultValue={defaultValue}
+          ref={(ref) => { this.input = ref; }}
+          onBlur={e => this.save(e)}
+        />
       </form>
     );
   }
@@ -25,7 +28,8 @@ class InlineInput extends React.Component {
 
 InlineInput.propTypes = {
   onSave: PropTypes.func.isRequired,
-  onFocus: PropTypes.func
+  onFocus: PropTypes.func,
+  defaultValue: PropTypes.string
 };
 
 export default InlineInput;

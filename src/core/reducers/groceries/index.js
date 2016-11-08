@@ -1,5 +1,3 @@
 import groceries from './groceries';
 
-export {
-  groceries
-};
+export default groceries;
